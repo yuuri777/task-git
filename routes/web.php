@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::get('projects', [ProjectController::class, 'index'])->name('projects.index');
 
     // プロジェクト作成画面
-    Route::get('project/create', [ProjectController::class, 'create'])->name('projects.create'); // ここを追加
+    Route::get('projects/create', [ProjectController::class, 'create'])->name('projects.create'); // ここを追加
 
     // プロジェクト作成処理
     Route::post('project/store', [ProjectController::class, 'store'])->name('projects.store'); // ここを追加

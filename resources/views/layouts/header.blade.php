@@ -2,6 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1f1f1f;">
         <div class="container-fluid">
             @auth
+            <!-- @ authで囲まれている部分はログイン済みの処理elseは非ログイン時 -->
                 <a class="navbar-brand" href="{{ route('projects.index') }}">タスク管理</a>
             @else
                 <a class="navbar-brand" href="/">タスク管理</a>

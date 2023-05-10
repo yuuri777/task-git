@@ -134,13 +134,13 @@ class TaskController extends Controller
         try{
 
         
-
+            $task->fill($request->all())->save();
         //タスク編集処理（fill）
-        $task->fill([
+        /*$task->fill([
             'task_name'=> $request->task_name,
             'task_status'=> $request->task_status,
             'due_date' => $request->due_date,
-        ]);
+        ]);*/
         //データを更新するためのメソッドはfillメソッド＋saveメソッドを使用している。
         // task_name,tasl_status,due_dateにはそれぞれのフォームで入力された値を入れている
 
@@ -165,5 +165,7 @@ class TaskController extends Controller
         return redirect()->route('tasks.index',[
             'id' =>$currentProjectId,
         ]);
+        //get時にはviewを使い、post時にはredirectが使われる。
+        // Route::postで呼び出すメソッドないに記述
     }
 }

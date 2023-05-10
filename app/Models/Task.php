@@ -29,6 +29,9 @@ class Task extends Model
         'due_date',
         'task_status',
     ];
+    //fillable は複数代入の脆弱性を対策するため、配列をつかってモデルを生成、更新するメソッドは基本的にcreateメソッド、updateメソッド,fillメソッド(saveメソッドと合わせて使用)
+    //fillableにより配列で指定された値しか更新、追加できないようにするためのメソッド
+    //fillメソッドにてモデルの複数カラムを更新する。
 
     /**
      * Projectsテーブルとのリレーション
